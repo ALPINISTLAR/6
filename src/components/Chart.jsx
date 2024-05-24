@@ -11,8 +11,9 @@ import {
   Legend,
 } from 'chart.js';
 import jsonData from '../data.json';
+import './chart.css'
 
-// Scale va boshqa komponentlarni ro'yxatdan o'tkazish
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -27,7 +28,7 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
-      display: false, // Legend ni olib tashlash
+      display: false,
     },
   },
 };
@@ -52,8 +53,8 @@ export function Chart() {
   const dataset = {
     label: `Batch ${selectedBatchIndex + 1}`,
     data: rates,
-    borderColor: 'rgb(255, 99, 132)',
-    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    borderColor: 'rgb(0, 113, 235)',
+    backgroundColor: 'rgb(0, 113, 235)',
   };
 
   const data = {
@@ -63,7 +64,7 @@ export function Chart() {
 
   return (
     <div>
-      <div>
+      <div className='header'>
         {jsonData.batchList.map((_, index) => (
           <button key={index} onClick={() => handleBatchClick(index)}>
             Batch {index + 1}
