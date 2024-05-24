@@ -15,11 +15,6 @@
   border-radius: 8px;
   cursor: pointer;
 }
-
-.header button:hover {
-  opacity: 0.6;
-}
-
 .header button:nth-child(3) {
   order: 1;
 }
