@@ -13,7 +13,6 @@ import {
 import jsonData from '../data.json';
 import './chart.css'
 
-
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -65,9 +64,9 @@ export function Chart() {
   return (
     <div>
       <div className='header'>
-        {jsonData.batchList.map((_, index) => (
+        {jsonData.batchList.map((batch, index) => (
           <button key={index} onClick={() => handleBatchClick(index)}>
-            Batch {index + 1}
+            {batch.name}
           </button>
         ))}
       </div>

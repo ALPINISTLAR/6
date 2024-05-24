@@ -1,21 +1,26 @@
-.header{
-display: flex;
-gap: 16px;
-justify-content: center;
-margin-bottom: 20px;
+.header {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-.header button{
-padding: 6px 12px;
-background-color: rgb(0, 113, 235);
-color: #fff;
-font-size: large;
-font-weight: 500;
-border: 0;
-border-radius: 8px;
-cursor: pointer;
+.header button {
+  padding: 6px 12px;
+  background-color: rgb(0, 113, 235);
+  color: #fff;
+  font-size: large;
+  font-weight: 500;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.header button:hover{
+.header button:hover {
   opacity: 0.6;
+}
+
+.header button:nth-child(6) {
+  order: 2;
+  /* border: 3px solid red; */
 }
