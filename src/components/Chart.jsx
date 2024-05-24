@@ -1,7 +1,27 @@
 import React, { useState, useCallback } from 'react';
 import { Line } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
 import jsonData from '../data.json';
-import './chart.css'
+
+// Scale va boshqa komponentlarni ro'yxatdan o'tkazish
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 export const options = {
   responsive: true,
@@ -32,8 +52,8 @@ export function Chart() {
   const dataset = {
     label: `Batch ${selectedBatchIndex + 1}`,
     data: rates,
-    borderColor: 'rgb(0, 113, 235)',
-    backgroundColor: 'rgb(0, 113, 235)',
+    borderColor: 'rgb(255, 99, 132)',
+    backgroundColor: 'rgba(255, 99, 132, 0.5)',
   };
 
   const data = {
@@ -43,7 +63,7 @@ export function Chart() {
 
   return (
     <div>
-      <div className='header'>
+      <div>
         {jsonData.batchList.map((_, index) => (
           <button key={index} onClick={() => handleBatchClick(index)}>
             Batch {index + 1}
